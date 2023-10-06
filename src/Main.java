@@ -6,10 +6,14 @@ import Creacionales.Factory.Creador.Dialog;
 import Creacionales.Factory.CreadorConcreto.AndroidDialog;
 import Creacionales.Factory.CreadorConcreto.FlutterDialog;
 import Creacionales.Factory.CreadorConcreto.LinuxDialog;
+import PRACTICA.FACTORY.Creador.AnimalCreador;
+import PRACTICA.FACTORY.CreadorConcreto.PerroCreador;
+import PRACTICA.FACTORY.Producto.Animal;
 
 public class Main {
 
     public static void main(String[] args) {
+            CreardorAnimales().comer();
 
     }
 
@@ -25,6 +29,13 @@ public class Main {
 
         dialog = new LinuxDialog();
         dialog.render();
+    }
+
+    private static Animal CreardorAnimales(){
+        AnimalCreador creador;
+
+        creador = new PerroCreador();
+       return creador.crear();
     }
 
     private static Cliente ABSTRACT_FACTORY(){
